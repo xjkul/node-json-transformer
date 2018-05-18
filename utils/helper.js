@@ -64,7 +64,7 @@ const appendKeyData = (val, key, obj, config) => {
 const dependsOnSomeOtherKey = (val, key, obj, config) => {
 
     if (typeof key === "undefined") {
-        return config.dependentMap[val];
+        return getObjectOrArrayFromStringKey(config.dependentMap[val], obj);
     }
 
     const {keyType, keyVal, fn} = extractKeyAndValue(key);
